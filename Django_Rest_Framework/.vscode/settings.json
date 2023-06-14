@@ -1,0 +1,8 @@
+{
+    "python.pythonPath" : "/Users/mac/Documents/ndq/Python/django/Django_Rest_Framework/venv/",
+    "python.venvPath": "/Users/mac/Documents/ndq/Python/django/Django_Rest_Framework",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
+}
