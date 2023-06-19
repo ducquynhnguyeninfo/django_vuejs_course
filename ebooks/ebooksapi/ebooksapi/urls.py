@@ -17,8 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from camera_connect.views import camera, video_feed
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include("rest_framework.urls")),
-    path("api/", include("ebooks.api.urls"))
+    path("api/", include("ebooks.api.urls")),
+     path('camera_connect/', camera),
+     path('video_feed/', video_feed, name="video-feed")
+
 ]

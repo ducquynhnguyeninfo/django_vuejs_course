@@ -1,3 +1,6 @@
+import cv2
+
+from django.http import StreamingHttpResponse
 from rest_framework import generics, mixins
 from rest_framework import permissions
 from rest_framework.validators import ValidationError
@@ -9,7 +12,7 @@ from ebooks.api.permissions import IsAdminUserOrReadOnly, IsReviewAuthorOrReadOn
 from ebooks.api.paginations import SmallSetPagination
 
 class EbookListCreateApiView(generics.ListCreateAPIView):
-    queryset = Ebook.objects.all().order_by('-id')
+    queryset = Ebook.objects.all().order_by('id') # -id: reverse the order
     serializer_class = EbookSerializer
     permission_classes = [IsAdminUserOrReadOnly]
     pagination_class = SmallSetPagination
